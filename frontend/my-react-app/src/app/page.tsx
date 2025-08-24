@@ -1,20 +1,19 @@
-
-
 import Profile from '../components/Profile';
-
-
+import RecentActivity from '../components/RecentActivity';
+import { ReactElement } from 'react';
 export const metadata = {
   title: "kazuki’s Portfolio Top | ITエンジニア 矢橋和樹 |",
-  description: "kazuki’s Portfolio Top。ITエンジニア矢橋和樹（Kazuki Yahashi）の経歴、スキル、Web制作・インフラ構築の実績を掲載したポートフォリオサイトです。",
+  description: "kazuki’s Portfolio Top。ITエンジニア矢橋和樹（Kazuki Yahashi）",
 };
 
-const App = () => {
+
+export default async function App(): Promise<ReactElement>  {
   return (
     <>
+    {/* next.jsは兄弟Componentでクライアントコンポーネントと
+    サーバコンポーネントは両立不可能なのでどちらもクライアントコンポーネント */}
       <Profile />
+      <RecentActivity /> 
     </>
   );
-  
-};
-
-export default App;
+}
